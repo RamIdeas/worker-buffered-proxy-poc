@@ -1,0 +1,15 @@
+{
+	"name": "cancelled",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"scripts": {
+		"test": "node ./src/test.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"wrangler": "^3.5.1"
+	}
+}
