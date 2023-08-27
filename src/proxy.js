@@ -45,9 +45,9 @@ function processRequest(request) {
 
 	return globalThis['fetch'](url, request) // TODO: check if redirect: manual is needed
 		.then((res) => {
-			if (isHtmlResponse(res)) {
-				res = insertLiveReloadScript(res);
-			}
+			// if (isHtmlResponse(res)) {
+			// 	res = insertLiveReloadScript(res);
+			// }
 
 			return res;
 		})
@@ -57,14 +57,14 @@ function processRequest(request) {
 		});
 }
 
-function insertLiveReloadScript(response) {
-	const htmlRewriter = new HTMLRewriter();
+// function insertLiveReloadScript(response) {
+// 	const htmlRewriter = new HTMLRewriter();
 
-	htmlRewriter.onDocument({
-		end(end) {
-			end.append(`<script>/* live reload script */</script>`, { html: true });
-		},
-	});
+// 	htmlRewriter.onDocument({
+// 		end(end) {
+// 			end.append(`<script>/* live reload script */</script>`, { html: true });
+// 		},
+// 	});
 
-	return htmlRewriter.transform(response);
-}
+// 	return htmlRewriter.transform(response);
+// }
